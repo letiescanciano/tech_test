@@ -3,7 +3,7 @@ defmodule Ukio.BookingCreatorTest do
 
   alias Ukio.Apartments
   alias Ukio.Apartments.Apartment
-  alias Ukio.Bookings.Handlers.BookingCreator
+  alias Ukio.Apartments.Bookings.Handlers.BookingCreator
   import Ukio.ApartmentsFixtures
 
   describe "generate_booking_data/3" do

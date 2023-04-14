@@ -1,6 +1,8 @@
-defmodule Ukio.Bookings.Handlers.BookingCreator do
+defmodule Ukio.Apartments.Bookings.Handlers.BookingCreator do
   alias Ukio.Apartments
+  alias Ukio.Apartments.Bookings
   alias Ukio.Apartments.Handlers.AvailabilityChecker
+
   @utilities_fee_multiplier %{"mars" => 150}
 
   def create(
@@ -15,7 +17,7 @@ defmodule Ukio.Bookings.Handlers.BookingCreator do
          check_out
        ) do
       booking_data = generate_booking_data(apartment, check_in, check_out)
-      Apartments.create_booking(booking_data)
+      Bookings.create_booking(booking_data)
     else
       {:error, :apartment_not_available}
     end
