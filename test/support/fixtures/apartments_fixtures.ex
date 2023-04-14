@@ -3,6 +3,7 @@ defmodule Ukio.ApartmentsFixtures do
   This module defines test helpers for creating
   entities via the `Ukio.Apartments` context.
   """
+  alias Ukio.Apartments
 
   @doc """
   Generate a apartment.
@@ -17,29 +18,8 @@ defmodule Ukio.ApartmentsFixtures do
         square_meters: 42,
         zip_code: "some zip_code"
       })
-      |> Ukio.Apartments.create_apartment()
+      |> Apartments.create_apartment()
 
     apartment
-  end
-
-  @doc """
-  Generate a booking.
-  """
-  def booking_fixture(attrs \\ %{}) do
-    apartment = apartment_fixture()
-
-    {:ok, booking} =
-      attrs
-      |> Enum.into(%{
-        apartment_id: apartment.id,
-        check_in: ~D[2023-03-26],
-        check_out: ~D[2023-03-26],
-        deposit: 100_000,
-        monthly_rent: apartment.monthly_price,
-        utilities: 20000
-      })
-      |> Ukio.Apartments.create_booking()
-
-    booking
   end
 end

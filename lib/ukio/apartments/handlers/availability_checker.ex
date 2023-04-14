@@ -1,7 +1,7 @@
 defmodule Ukio.Apartments.Handlers.AvailabilityChecker do
   import Ecto.Query, warn: false
 
-  alias Ukio.Apartments.Booking
+  alias Ukio.Apartments.Bookings.Booking
   alias Ukio.Repo
 
   def is_apartment_available?(apartment_id, check_in, check_out) do

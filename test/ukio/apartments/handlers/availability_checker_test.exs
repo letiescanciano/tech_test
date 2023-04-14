@@ -2,10 +2,11 @@ defmodule Ukio.Apartments.Handlers.AvailabilityCheckerTest do
   use Ukio.DataCase
   alias Ukio.Apartments
 
-  alias Ukio.Apartments.Booking
+  alias Ukio.Apartments.Bookings.Booking
   alias Ukio.Apartments.Handlers.AvailabilityChecker
 
   import Ukio.ApartmentsFixtures
+  import Ukio.BookingsFixtures
 
   describe "is_apartment_available?/3" do
     @create_attrs %{
