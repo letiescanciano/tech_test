@@ -2,7 +2,6 @@ defmodule UkioWeb.BookingControllerTest do
   use UkioWeb.ConnCase, async: true
 
   import Ukio.ApartmentsFixtures
-  import Ukio.BookingsFixtures
 
   @create_attrs %{
     apartment_id: 42,
@@ -47,10 +46,5 @@ defmodule UkioWeb.BookingControllerTest do
       conn = post(conn, ~p"/api/bookings", booking: b)
       assert json_response(conn, 422)["errors"] != %{}
     end
-  end
-
-  defp create_booking(_) do
-    booking = booking_fixture()
-    %{booking: booking}
   end
 end
