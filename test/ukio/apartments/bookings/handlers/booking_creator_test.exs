@@ -1,8 +1,6 @@
 defmodule Ukio.BookingCreatorTest do
   use Ukio.DataCase
 
-  alias Ukio.Apartments
-  alias Ukio.Apartments.Apartment
   alias Ukio.Apartments.Bookings.Handlers.BookingCreator
   import Ukio.ApartmentsFixtures
 

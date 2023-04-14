@@ -1,8 +1,6 @@
 defmodule Ukio.Apartments.Handlers.AvailabilityCheckerTest do
   use Ukio.DataCase
-  alias Ukio.Apartments
 
-  alias Ukio.Apartments.Bookings.Booking
   alias Ukio.Apartments.Handlers.AvailabilityChecker
 
   import Ukio.ApartmentsFixtures
@@ -36,7 +34,7 @@ defmodule Ukio.Apartments.Handlers.AvailabilityCheckerTest do
 
     test "returns false if apartment needs to be booked on the same exact dates as an existing booking",
          state do
-      booking = booking_fixture(Map.merge(@create_attrs, %{apartment_id: state[:apartment].id}))
+      booking_fixture(Map.merge(@create_attrs, %{apartment_id: state[:apartment].id}))
 
       refute AvailabilityChecker.is_apartment_available?(
                state[:apartment].id,
